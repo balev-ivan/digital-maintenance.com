@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    border: 1px solid red;
+    overflow: hidden;
+    width: 100%;
+    padding: 0;
+    background-color: black;
+    color: white;
+}
+
+header img {
+    border: 1px solid red;
+    width: 10%;
+    float: left;
+}
+#main-banner {
+    border: 1px solid red;
+    width: 49%;
+    float: left;
+}
+
+nav {
+    border: 1px solid red;
+    float: right;
+    color: white;
+    margin-right: 10px;
+}
+
+footer {
+    border: 1px solid red;
+    color: white;
+    padding: 15px;
+    background-color: black;
+}
+
+main {
+    padding: 10px;
+}
