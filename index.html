@@ -13,18 +13,33 @@
     </div>
     <nav>
         <ul>
-            <li>Home</li>
-            <li>Services</li>
-            <li>Team and Partners</li>
-            <li>Clients</li>
-            <li>Contacts</li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="services">Services</a></li>
+            <li><a href="team_partners">Team and Partners</a></li>
+            <li><a href="clients">Clients</a></li>
+            <li><a href="contacts">Contacts</a></li>
         </ul>
     </nav>
 </header>
 <main>
-    <div>
-        <div>Carousel</div>
-        <div>
+    <div id="main-screen">
+        <div class="carousel">
+            <div class="carousel_pic fade">
+                <img src="/pictures/carousel_01.jfif">
+            </div>
+            <div class="carousel_pic fade">
+                <img src="/pictures/carousel_02.jfif">
+            </div>
+            <div class="carousel_pic fade">
+                <img src="/pictures/carousel_03.jfif">
+            </div>
+            <div class="carousel_pic fade">
+                <img src="/pictures/carousel_04.jfif">
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <div class="main-articles">
             <article>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae posuere risus. Nullam ut
                 maximus lorem, non lobortis velit. Cras commodo ex et sapien pretium, in varius nisi bibendum. Mauris id
                 placerat felis, ac ullamcorper nibh. Mauris elementum, urna in varius tincidunt, massa nunc dictum diam,
@@ -49,4 +64,31 @@
     Created by Ivan Balev
 </footer>
 </body>
+
+<script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("carousel_pic");
+        if (n > slides.length) {
+            slideIndex = 1
+        }
+        if (n < 1) {
+            slideIndex = slides.length
+        }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+
+        slides[slideIndex - 1].style.display = "block";
+
+    }
+</script>
+
 </html>
