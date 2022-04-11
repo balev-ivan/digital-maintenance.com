@@ -7,23 +7,31 @@
 </head>
 <body>
 <header>
-    <div id="main-banner">
-        <img src="/pictures/main_logo.png" alt="Digital Maintenance">
-        <h1>Digital Maintenance</h1>
-    </div>
+    <img src="/pictures/main_logo.png" alt="Digital Maintenance">
+    <h1>Digital Maintenance</h1>
     <nav>
         <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="services">Services</a></li>
-            <li><a href="team_partners">Team and Partners</a></li>
-            <li><a href="clients">Clients</a></li>
-            <li><a href="contacts">Contacts</a></li>
+            <li>
+                <button onclick="openTab('home_tab')" id="defaultTab">Home</button>
+            </li>
+            <li>
+                <button onclick="openTab('services_tab')">Services</button>
+            </li>
+            <li>
+                <button onclick="openTab('team_tab')">Team and Partners</button>
+            </li>
+            <li>
+                <button onclick="openTab('clients_tab')">Clients</button>
+            </li>
+            <li class="right_menu">
+                <button href="/" onclick="openTab('contacts_tab')">Contacts</button>
+            </li>
         </ul>
     </nav>
 </header>
 <main>
-    <div id="main-screen">
-        <div class="carousel">
+    <div>
+        <div class="menu_info carousel" id="home_tab">
             <div class="carousel_pic fade">
                 <img src="/pictures/carousel_01.jfif">
             </div>
@@ -39,10 +47,51 @@
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div>
-        <div class="main-articles">
-            <article>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae posuere risus. Nullam ut
-                maximus lorem, non lobortis velit. Cras commodo ex et sapien pretium, in varius nisi bibendum. Mauris id
+
+        <div class="menu_info" id="services_tab">
+            <h2>Services Tab</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae posuere risus. Nullam ut maximus
+                lorem, non lobortis velit. Cras commodo ex et sapien pretium, in varius nisi bibendum. Mauris id
                 placerat felis, ac ullamcorper nibh. Mauris elementum, urna in varius tincidunt, massa nunc dictum diam,
+                eu mollis erat arcu non lacus. Nullam et urna sollicitudin, facilisis sem a, sagittis orci. Fusce
+                consequat ultrices quam vitae efficitur. Integer tempus laoreet felis, vel consectetur felis finibus
+                aliquet. Sed molestie urna at urna bibendum sollicitudin.</p>
+        </div>
+        <div class="menu_info" id="team_tab">
+            <h2>Team and Partners</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae posuere risus. Nullam ut maximus
+                lorem, non lobortis velit. Cras commodo ex et sapien pretium, in varius nisi bibendum. Mauris id
+                placerat felis, ac ullamcorper nibh. Mauris elementum, urna in varius tincidunt, massa nunc dictum diam,
+                eu mollis erat arcu non lacus. Nullam et urna sollicitudin, facilisis sem a, sagittis orci. Fusce
+                consequat ultrices quam vitae efficitur. Integer tempus laoreet felis, vel consectetur felis finibus
+                aliquet. Sed molestie urna at urna bibendum sollicitudin.</p>
+        </div>
+        <div class="menu_info" id="clients_tab">
+            <h2>Clients</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae posuere risus. Nullam ut maximus
+                lorem, non lobortis velit. Cras commodo ex et sapien pretium, in varius nisi bibendum. Mauris id
+                placerat felis, ac ullamcorper nibh. Mauris elementum, urna in varius tincidunt, massa nunc dictum diam,
+                eu mollis erat arcu non lacus. Nullam et urna sollicitudin, facilisis sem a, sagittis orci. Fusce
+                consequat ultrices quam vitae efficitur. Integer tempus laoreet felis, vel consectetur felis finibus
+                aliquet. Sed molestie urna at urna bibendum sollicitudin.</p>
+        </div>
+        <div class="menu_info" id="contacts_tab">
+            <h2>Contacts</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae posuere risus. Nullam ut maximus
+                lorem, non lobortis velit. Cras commodo ex et sapien pretium, in varius nisi bibendum. Mauris id
+                placerat felis, ac ullamcorper nibh. Mauris elementum, urna in varius tincidunt, massa nunc dictum diam,
+                eu mollis erat arcu non lacus. Nullam et urna sollicitudin, facilisis sem a, sagittis orci. Fusce
+                consequat ultrices quam vitae efficitur. Integer tempus laoreet felis, vel consectetur felis finibus
+                aliquet. Sed molestie urna at urna bibendum sollicitudin.</p>
+        </div>
+
+        <div>
+            <h3> Some general topics</h3>
+            <article>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae posuere risus. Nullam ut
+                maximus lorem, non lobortis velit. Cras commodo ex et sapien pretium, in varius nisi bibendum.
+                Mauris id
+                placerat felis, ac ullamcorper nibh. Mauris elementum, urna in varius tincidunt, massa nunc dictum
+                diam,
                 eu mollis erat arcu non lacus. Nullam et urna sollicitudin, facilisis sem a, sagittis orci. Fusce
                 consequat ultrices quam vitae efficitur. Integer tempus laoreet felis, vel consectetur felis finibus
                 aliquet. Sed molestie urna at urna bibendum sollicitudin.
@@ -51,10 +100,13 @@
                 placerat. Aenean eu dui semper, finibus dui consectetur, sagittis eros. Lorem ipsum dolor sit amet,
                 consectetur adipiscing elit. Mauris quis nulla at nunc bibendum sollicitudin. Integer vulputate
                 vestibulum suscipit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
-                turpis egestas. Vestibulum euismod dapibus pulvinar. Aenean interdum gravida ante, vitae accumsan libero
-                volutpat vel. Suspendisse non finibus massa, id convallis lorem. Integer aliquet, tellus eu consequat
+                turpis egestas. Vestibulum euismod dapibus pulvinar. Aenean interdum gravida ante, vitae accumsan
+                libero
+                volutpat vel. Suspendisse non finibus massa, id convallis lorem. Integer aliquet, tellus eu
+                consequat
                 fringilla, velit neque dapibus metus, non ullamcorper lacus dui nec est. Vivamus a laoreet mi.
             </article>
+
         </div>
     </div>
 </main>
@@ -66,7 +118,23 @@
 </body>
 
 <script>
-    var slideIndex = 1;
+
+    // Open default tab
+    document.getElementById("defaultTab").click();
+
+    // Menu management
+    function openTab(tabName) {
+        let i, menuInfo;
+        menuInfo = document.getElementsByClassName("menu_info");
+        let menuLength = menuInfo.length;
+        for (i = 0; i < menuLength; i++) {
+            menuInfo[i].style.display = "none";
+        }
+        document.getElementById(tabName).style.display = "block";
+    }
+
+    // Carousel management
+    let slideIndex = 1;
     showSlides(slideIndex);
 
     function plusSlides(n) {
@@ -74,20 +142,19 @@
     }
 
     function showSlides(n) {
-        var i;
-        var slides = document.getElementsByClassName("carousel_pic");
-        if (n > slides.length) {
+        let i;
+        let slides = document.getElementsByClassName("carousel_pic");
+        let slideLength = slides.length;
+        if (n > slideLength) {
             slideIndex = 1
         }
         if (n < 1) {
-            slideIndex = slides.length
+            slideIndex = slideLength
         }
-        for (i = 0; i < slides.length; i++) {
+        for (i = 0; i < slideLength; i++) {
             slides[i].style.display = "none";
         }
-
         slides[slideIndex - 1].style.display = "block";
-
     }
 </script>
 

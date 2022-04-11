@@ -1,36 +1,26 @@
 /*********************************************** Body part */
-body {
+body, header, footer {
     margin: 0;
     padding: 0;
 }
 
 /*********************************************** Header part */
 header {
-    border: 1px solid red;
-    overflow: hidden;
-    width: 100%;
-    padding: 0;
     background-color: black;
-    color: white;
+    color: peru;
+    overflow: auto;
 }
 
 header img {
-    border: 1px solid red;
-    width: 10%;
-    float: left;
+    position: absolute;
+    top: 10px;
+    left: 3px;
+    width: 65px;
 }
 
-#main-banner {
-    border: 1px solid red;
-    width: 50%;
-    float: left;
-}
-
-nav {
-    border: 1px solid red;
-    float: right;
-    color: white;
-    margin-right: 10px;
+header h1 {
+    text-align: center;
+    width: 100%;
 }
 
 /* Menu part */
@@ -39,35 +29,45 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333333;
+    background-color: darkblue;
 }
 
 li {
     float: left;
 }
 
-li a {
+.right_menu {
+    float: right
+}
+
+li button {
     display: block;
     color: white;
     text-align: center;
     padding: 16px;
-    text-decoration: none;
+    background-color: inherit;
+    border: none;
+    width: 100%;
 }
 
-li a:hover {
-    background-color: #111111;
+li button:hover {
+    background-color: darkolivegreen;
 }
 
 /*********************************************** Main part */
 #main-screen {
-    border: 10px solid green;
     height: 100%;
     display: block;
     padding: 0;
 }
 
 .main-articles {
-    border: 10px solid blue;
+    margin: 5px;
+    padding: 5px 5px;
+}
+
+article {
+    padding: 5px;
 }
 
 /* Slideshow container */
@@ -117,7 +117,7 @@ li a:hover {
 
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: darkslategrey;
 }
 
 /* Fading animation */
@@ -158,15 +158,19 @@ li a:hover {
         display: block;
         margin: auto;
     }
+
+    li, .right_menu {
+        float: none;
+    }
 }
 
 
 /*********************************************** Footer */
 footer {
-    border: 1px solid red;
     color: white;
     padding: 15px;
     background-color: black;
+
 }
 
 
