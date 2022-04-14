@@ -1,5 +1,9 @@
 "use strict";
 
+window.onload = function () {
+    alert("hello on load");
+};
+
 // Menu management
 
 // Global variable to store default selection
