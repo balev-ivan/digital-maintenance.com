@@ -4,34 +4,25 @@
     <meta charset="UTF-8">
     <title>Digital Maintenance</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
 </head>
-<body>
+<body onload="showDefault()"> <!-- Show default tab after page loading  -->
 <header>
     <img src="/pictures/main_logo.png" alt="Digital Maintenance">
     <h1>Digital Maintenance</h1>
     <nav>
         <ul>
-            <li>
-                <button onclick="openTab('home_tab')" id="defaultTab">Home</button>
-            </li>
-            <li>
-                <button onclick="openTab('services_tab')">Services</button>
-            </li>
-            <li>
-                <button onclick="openTab('team_tab')">Team and Partners</button>
-            </li>
-            <li>
-                <button onclick="openTab('clients_tab')">Clients</button>
-            </li>
-            <li class="right_menu">
-                <button href="/" onclick="openTab('contacts_tab')">Contacts</button>
-            </li>
+            <li><a href="javascript:changeActiveTab('home_tab')">Home</a></li>
+            <li><a href="javascript:changeActiveTab('services_tab')">Services</a></li>
+            <li><a href="javascript:changeActiveTab('team_tab')">Team and Partners</a></li>
+            <li><a href="javascript:changeActiveTab('clients_tab')">Clients</a></li>
+            <li class="right_menu"><a href="javascript:changeActiveTab('contacts_tab')">Contacts</a></li>
         </ul>
     </nav>
 </header>
 <main>
     <div>
-        <div class="menu_info carousel" id="home_tab">
+        <div class="menu_info carousel home_tab">
             <div class="carousel_pic fade">
                 <img src="/pictures/carousel_01.jfif">
             </div>
@@ -48,7 +39,7 @@
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div>
 
-        <div class="menu_info" id="services_tab">
+        <div class="menu_info services_tab">
             <h2>Services Tab</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae posuere risus. Nullam ut maximus
                 lorem, non lobortis velit. Cras commodo ex et sapien pretium, in varius nisi bibendum. Mauris id
@@ -57,7 +48,7 @@
                 consequat ultrices quam vitae efficitur. Integer tempus laoreet felis, vel consectetur felis finibus
                 aliquet. Sed molestie urna at urna bibendum sollicitudin.</p>
         </div>
-        <div class="menu_info" id="team_tab">
+        <div class="menu_info team_tab">
             <h2>Team and Partners</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae posuere risus. Nullam ut maximus
                 lorem, non lobortis velit. Cras commodo ex et sapien pretium, in varius nisi bibendum. Mauris id
@@ -66,7 +57,7 @@
                 consequat ultrices quam vitae efficitur. Integer tempus laoreet felis, vel consectetur felis finibus
                 aliquet. Sed molestie urna at urna bibendum sollicitudin.</p>
         </div>
-        <div class="menu_info" id="clients_tab">
+        <div class="menu_info clients_tab">
             <h2>Clients</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae posuere risus. Nullam ut maximus
                 lorem, non lobortis velit. Cras commodo ex et sapien pretium, in varius nisi bibendum. Mauris id
@@ -75,7 +66,7 @@
                 consequat ultrices quam vitae efficitur. Integer tempus laoreet felis, vel consectetur felis finibus
                 aliquet. Sed molestie urna at urna bibendum sollicitudin.</p>
         </div>
-        <div class="menu_info" id="contacts_tab">
+        <div class="menu_info contacts_tab">
             <h2>Contacts</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae posuere risus. Nullam ut maximus
                 lorem, non lobortis velit. Cras commodo ex et sapien pretium, in varius nisi bibendum. Mauris id
@@ -118,19 +109,22 @@
 </body>
 
 <script>
-
-    // Open default tab
-    document.getElementById("defaultTab").click();
-
     // Menu management
-    function openTab(tabName) {
-        let i, menuInfo;
-        menuInfo = document.getElementsByClassName("menu_info");
-        let menuLength = menuInfo.length;
-        for (i = 0; i < menuLength; i++) {
-            menuInfo[i].style.display = "none";
-        }
-        document.getElementById(tabName).style.display = "block";
+
+    // Global variable to store default selection
+    let currentSelection = document.querySelector(".menu_info");
+
+    function showDefault() {
+        currentSelection.classList.add("show-div");
+    }
+
+    // Change active tab
+    function changeActiveTab(newSelection) {
+        currentSelection.classList.remove("show-div");
+        let selector = '.' + newSelection;
+        let newTab = document.querySelector(selector);
+        currentSelection = newTab;
+        currentSelection.classList.add("show-div");
     }
 
     // Carousel management
